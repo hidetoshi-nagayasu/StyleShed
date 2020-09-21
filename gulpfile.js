@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
+const packageImporter = require('node-sass-package-importer')
 
 // sassの読み込み先とcssの保存先指定
 const hoge = () => {

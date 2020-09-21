@@ -1,3 +1,72 @@
 h1 {
-  color: black;
+  color: #333;
+}
+
+// .CodeMirror {
+//   border: 1px solid #ccc;
+// }
+
+/**
+ * CodeMirror
+ */
+:root {
+  --theme: #000;
+  --font: 'Source Sans Pro';
+}
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 20px;
+}
+/* Code Mirror Styles class created on DOM */
+.CodeMirror {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+}
+/* Main Part */
+.studio {
+  font-family: var(--font);
+  overflow: hidden;
+}
+/* Top Bar Section */
+
+/* Editor Wrapper Styles */
+.editor {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+}
+#html {
+  border-right: solid 1px #777;
+}
+/* The Wrapper for the editor wrappers */
+.control-room {
+  height: calc(50vh - 63px);
+  background: #eee;
+  border-top: solid 1px #000;
+  border-bottom: solid 10px #333;
+  overflow: hidden;
+  position: relative;
+}
+/* Live Preview Wrapper */
+.live-room {
+  height: calc(50vh - 63px);
+  background: #fff;
+  border-top: solid 10px #333;
+  position: relative;
+}
+/* Iframe Live Preview */
+.live-room iframe {
+  width: 100%;
+  height: 100%;
 }

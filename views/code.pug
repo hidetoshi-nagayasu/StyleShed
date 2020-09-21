@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p
+    a(href="/") Home
+  p
+    a(href="/db") DB
+  .studio
+    .control-room
+      #html.editor
+  .live-room
+    iframe#live(src='')
+

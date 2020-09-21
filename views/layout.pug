@@ -1,7 +1,11 @@
 doctype html
-html
+block vars
+html(lang="ja")
   head
-    title= title
-    link(rel='stylesheet', href='/css/style.css')
-  body
-    block content
+    include include/_head
+
+  body(class=key)
+    .l_contents
+      include include/_header
+      block content
+    include include/_footer
