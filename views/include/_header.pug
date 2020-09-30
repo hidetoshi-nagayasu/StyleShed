@@ -1,1 +1,19 @@
-header
+header.uk-box-shadow-medium
+  .uk-navbar-container
+  #headerLeft.uk-navbar-left
+    .header-logo
+      h1
+        a(href="/") #{site_title}
+  #headerRight.uk-navbar-right
+    .header-action.uk-navbar-nav
+      li.header-right-item
+        form(action="javascript:void(0)" class="search-form")
+          label
+            span(class="search-icon" uk-icon="icon: search")
+            input(class="uk-input uk-form-width-medium" type="text" placeholder="Search...")
+      li.header-right-item
+        a(href="/category") カテゴリ
+      li.header-right-item
+        a(href="/auth/signin") ログイン
+      li.header-right-item.header-button-action
+        button(class="uk-button uk-button-primary button-code") コードを書く

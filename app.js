@@ -1,13 +1,11 @@
-const createError = require('http-errors');
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const mysql = require('mysql');
-const app = express();
+const createError   = require('http-errors');
+const express       = require('express');
+const path          = require('path');
+const cookieParser  = require('cookie-parser');
+const logger        = require('morgan');
+const session       = require('express-session');
 
-// 環境変数
-const env = process.env;
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,6 +16,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+/**
+ * Session
+ */
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
+
+
+/**
+ * Assets directory
+ */
+app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist"));
 app.use("/codemirror", express.static(__dirname + "/node_modules/codemirror"));
 
 
@@ -27,40 +41,12 @@ app.use("/codemirror", express.static(__dirname + "/node_modules/codemirror"));
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const codeRouter  = require('./routes/code');
+const authRouter  = require('./routes/auth')
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/code', codeRouter);
-
-
-/**
- * Database Config
- */
-const connection = mysql.createConnection({
-  host:     env.DB_HOST,
-  user:     env.DB_USER,
-  password: env.DB_PASSWORD,
-  database: env.DB_DBNAME
-});
-
-// MySQL connection
-connection.connect((err) => {
-  if (err) {
-    console.log('error connecting: ' + err.stack);
-    return;
-  }
-  console.log('DB connected...');
-});
-
-app.get('/db', (req, res) => {
-  connection.query(
-    'SELECT * FROM test',
-    (error, results) => {
-      console.log(results);
-      res.render('index', { title: 'MySQL' });
-    }
-  );
-});
+app.use('/auth', authRouter);
 
 
 /**

@@ -1,72 +1,55 @@
-h1 {
-  color: #333;
-}
 
-// .CodeMirror {
-//   border: 1px solid #ccc;
-// }
+// Define
+$button_radius: 24px;
 
-/**
- * CodeMirror
- */
-:root {
-  --theme: #000;
-  --font: 'Source Sans Pro';
-}
-/* Scrollbars */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 20px;
-}
-/* Code Mirror Styles class created on DOM */
-.CodeMirror {
-  font-size: 14px;
-  height: 100%;
-  width: 100%;
-}
-/* Main Part */
-.studio {
-  font-family: var(--font);
-  overflow: hidden;
-}
-/* Top Bar Section */
-
-/* Editor Wrapper Styles */
-.editor {
-  width: 100%;
-  float: left;
-  box-sizing: border-box;
-  height: 100%;
-  position: relative;
-}
-#html {
-  border-right: solid 1px #777;
-}
-/* The Wrapper for the editor wrappers */
-.control-room {
-  height: calc(50vh - 63px);
-  background: #eee;
-  border-top: solid 1px #000;
-  border-bottom: solid 10px #333;
-  overflow: hidden;
-  position: relative;
-}
-/* Live Preview Wrapper */
-.live-room {
-  height: calc(50vh - 63px);
+header {
+  height: 80px;
   background: #fff;
-  border-top: solid 10px #333;
-  position: relative;
+  padding: 0 64px;
+  display: flex;
+
+  .header-logo a:hover {
+    text-decoration: none;
+  }
+
+  // header item
+  .header-right-item {
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  // header button
+  .header-button-action {
+    display: flex;
+    align-items: center;
+  }
+
+  // button
+  button.button-code {
+    border-radius: $button_radius;
+  }
+
+  // search form
+  form.search-form {
+    position: relative;
+  }
+
+  // search icon
+  form.search-form .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+  }
+
+  // search input
+  form.search-form input {
+    border-radius: $button_radius;
+    text-indent: 24px;
+  }
 }
-/* Iframe Live Preview */
-.live-room iframe {
-  width: 100%;
-  height: 100%;
+
+h1 {
+  margin: 0;
 }

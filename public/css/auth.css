@@ -1,0 +1,17 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.auth-card {
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  text-decoration: none;
+}
