@@ -7,22 +7,45 @@ block vars
 
 block content
   main
-    .auth-card.uk-card.uk-card-default.uk-card-body
-      h3(class="uk-card-title") ユーザー登録
-      form(action="/auth/signup" method="post")
-        .uk-margin
-          label(for="username" class="uk-form-label") ユーザー名
-            .uk-form-controls
-              input(type="text" name="username" class="uk-input")
-        .uk-margin
-          label(for="email" class="uk-form-label") メールアドレス
-            .uk-form-controls
-              input(type="text" name="email" class="uk-input")
-        .uk-margin
-          label(for="password" class="uk-form-label") パスワード
-            .uk-form-controls
-              input(type="password" name="password" class="uk-input")
-        .uk-margin.submit
-          button(type="submit" class="uk-button uk-button-primary uk-width-1-1") 登録する
-      a(href="/auth/signin") Signin
+    include _cover_image
+    .right-wrapper
+      .auth-section.uk-width-5-6
+        - if (flash != "" && typeof flash != 'undefined')
+          .flash-section
+            - if (flash.success != "" && typeof flash.success != 'undefined')
+              .flash-alert(class="uk-alert-success uk-alert" uk-alert)
+                p= flash.success
+            - if (flash.fail != "" && typeof flash.fail != 'undefined')
+              .flash-alert(class="uk-alert-danger uk-alert" uk-alert)
+                p= flash.fail
+        h3(class="uk-card-title") アカウントを作成
+        form(action="/auth/signup" method="post")
+          .uk-margin
+            label(for="username" class="uk-form-label") ユーザー名
+              .uk-form-controls
+                input(type="text" name="username" class="uk-input" value=inputObject ? inputObject.username : "")
+                - if (errorObject)
+                  span.error-text.uk-text-danger
+                    small= errorObject.errorMessage.usernameInvalid
+          .uk-margin
+            label(for="email" class="uk-form-label") メールアドレス
+              .uk-form-controls
+                input(type="text" name="email" class="uk-input" value=inputObject ? inputObject.email : "")
+                - if (errorObject)
+                  span.error-text.uk-text-danger
+                    small= errorObject.errorMessage.emailInvalid
+          .uk-margin
+            label(for="password" class="uk-form-label") パスワード（大文字小文字英数字組み合わせ）
+              .uk-form-controls
+                input(type="password" name="password" class="uk-input")
+                - if (errorObject)
+                  span.error-text.uk-text-danger
+                    small= errorObject.errorMessage.passwordInvalid
+          .uk-margin.submit
+            button(type="submit" class="uk-button uk-button-primary uk-width-1-1") 登録する
+        p.uk-text-small.uk-text-center
+          span.uk-text-muted
+            | アカウントをお持ちの方 
+          span
+            a(href="/auth/signin") ログイン
   

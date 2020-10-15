@@ -7,17 +7,37 @@ block vars
 
 block content
   main
-    .auth-card.uk-card.uk-card-default.uk-card-body
-      h3(class="uk-card-title") Login
-      form(action="/auth/signin" method="post")
-        .uk-margin
-          label(for="email" class="uk-form-label") メールアドレス
-            .uk-form-controls
-              input(type="text" name="email" class="uk-input")
-        .uk-margin
-          label(for="password" class="uk-form-label") パスワード
-            .uk-form-controls
-              input(type="password" name="password" class="uk-input")
-        .uk-margin.submit
-          button(type="submit" class="uk-button uk-button-primary uk-width-1-1") ログイン
-      a(href="/auth/signup") Signup
+    include _cover_image
+    .right-wrapper
+      .auth-section.uk-width-5-6
+        - if (flash != "" && typeof flash != 'undefined')
+          .flash-section
+            - if (flash.success != "" && typeof flash.success != 'undefined')
+              .flash-alert(class="uk-alert-success uk-alert" uk-alert)
+                p= flash.success
+            - if (flash.fail != "" && typeof flash.fail != 'undefined')
+              .flash-alert(class="uk-alert-danger uk-alert" uk-alert)
+                p= flash.fail
+        h3(class="uk-card-title") ログイン
+        form(action="/auth/signin" method="post")
+          .uk-margin
+            label(for="email" class="uk-form-label") メールアドレス
+              .uk-form-controls
+                input(type="text" name="email" class="uk-input")
+          .uk-margin
+            label(for="password" class="uk-form-label") パスワード
+              .uk-form-controls
+                input(type="password" name="password" class="uk-input")
+          .uk-margin.submit
+            button(type="submit" class="uk-button uk-button-primary uk-width-1-1") ログイン
+        p.uk-text-small.uk-text-center
+          span.uk-text-muted
+            | パスワードを忘れた場合は
+          span
+            a(href="/auth/password_reset") こちら
+        hr
+        p.uk-text-small.uk-text-center
+          span.uk-text-muted
+            | アカウントをお持ちでない方 
+          span
+            a(href="/auth/signup") アカウント作成

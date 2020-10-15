@@ -1,5 +1,4 @@
 header.uk-box-shadow-medium
-  .uk-navbar-container
   #headerLeft.uk-navbar-left
     .header-logo
       h1
@@ -7,13 +6,41 @@ header.uk-box-shadow-medium
   #headerRight.uk-navbar-right
     .header-action.uk-navbar-nav
       li.header-right-item
-        form(action="javascript:void(0)" class="search-form")
-          label
-            span(class="search-icon" uk-icon="icon: search")
-            input(class="uk-input uk-form-width-medium" type="text" placeholder="Search...")
+        form(action="javascript:void(0)" class="uk-search uk-search-default")
+          span(uk-search-icon)
+          input(class="uk-search-input search-input" type="search" placeholder="Search...")
       li.header-right-item
         a(href="/category") カテゴリ
-      li.header-right-item
-        a(href="/auth/signin") ログイン
+      - if (user)
+        li.header-right-item
+          a(href="#")
+            span(uk-icon="icon: user; ratio: 1.25")
+          div(uk-dropdown="mode: click; pos: bottom-justify")
+            ul(class="uk-nav uk-dropdown-nav")
+              li.uk-margin
+                a(href="/#{user.username}") 
+                  span(uk-icon="icon: user" class="uk-margin-small-right")
+                  | プロフィール
+              li.uk-margin
+                a(href="/setting/profile") 
+                  span(uk-icon="icon: file-edit" class="uk-margin-small-right")
+                  | プロフィール編集
+              li.uk-nav-divider
+              li.uk-margin
+                a(href="/like")
+                  span(uk-icon="icon: heart" class="uk-margin-small-right")
+                  | いいね
+              li.uk-margin
+                a(href="/stock")
+                  span(uk-icon="icon: folder" class="uk-margin-small-right")
+                  | ストック
+              li.uk-nav-divider
+              li.uk-margin-top
+                a(href="/auth/signout") 
+                  span(uk-icon="icon: sign-out" class="uk-margin-small-right")
+                  | ログアウト
+      - else
+        li.header-right-item
+          a(href="/auth/signin") ログイン
       li.header-right-item.header-button-action
         button(class="uk-button uk-button-primary button-code") コードを書く

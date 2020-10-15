@@ -4,6 +4,7 @@ const path          = require('path');
 const cookieParser  = require('cookie-parser');
 const logger        = require('morgan');
 const session       = require('express-session');
+const flash         = require('express-flash');
 
 const app = express();
 
@@ -27,6 +28,13 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(function(req, res, next){
+  res.locals.session = req.session;
+  next();
+});
+
+app.use(flash());
+
 
 /**
  * Assets directory
@@ -38,15 +46,17 @@ app.use("/codemirror", express.static(__dirname + "/node_modules/codemirror"));
 /**
  * Routing
  */
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const codeRouter  = require('./routes/code');
-const authRouter  = require('./routes/auth')
+const indexRouter    = require('./routes/index');
+const usersRouter    = require('./routes/users');
+const codeRouter     = require('./routes/code');
+const authRouter     = require('./routes/auth');
+const settingRouter  = require('./routes/setting'); 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/code', codeRouter);
 app.use('/auth', authRouter);
+app.use('/setting', settingRouter);
 
 
 /**

@@ -1,0 +1,15 @@
+extends _layout
+
+block vars
+  include ../config
+  - var key = "auth_error"
+  - var page = pages[key]
+
+block content
+  main
+    include _cover_image
+    .right-wrapper
+      .auth-section.uk-width-5-6
+        h3(class="uk-card-title") エラーが発生しました。
+        p.uk-text-small.uk-text-muted
+          | 処理中にエラーが発生しました。操作内容を確認してください。

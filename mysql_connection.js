@@ -13,13 +13,4 @@ const connection = mysql.createConnection({
   database: env.DB_DBNAME
 });
 
-// MySQL connection
-// connection.connect((err) => {
-//   if (err) {
-//     console.log('error connecting: ' + err.stack);
-//     return;
-//   }
-//   console.log('DB connected...');
-// });
-
 module.exports = connection;
