@@ -1,0 +1,9 @@
+extends layout
+
+block vars
+  include config
+  - var key = "profile"
+  - var page = pages[key]
+
+block content
+  p Profile

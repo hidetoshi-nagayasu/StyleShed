@@ -96,6 +96,16 @@ router.post('/signin', (req, res, next) => {
           email: record.email
         };
 
+        // 最終ログイン日時を保存
+        const lastLoginQuery = query.updateLastLoginAt();
+        const setParams = [moment().tz(app_const.TIME_ZONE).format("YYYY-MM-DD HH:mm:ss"), record.id];
+
+        connection.query(lastLoginQuery, setParams, (err, updateResult) => {
+          if(err) {
+            console.log('Setting last_login_at failed.');
+          }
+        });
+
         // セッション格納
         req.session.user = user;
         req.flash('login_success', message.LOGIN_SUCCESS);
@@ -150,7 +160,7 @@ router.post('/signup', (req, res, next) => {
 
   // plus data
   const hashedPassword = bcrypt.hashSync(password, 10); // パスワードハッシュ化
-  const createdAt = moment().format('YYYY-MM-DD HH:mm:ss');
+  const createdAt = moment().tz(app_const.TIME_ZONE).format("YYYY-MM-DD HH:mm:ss");
 
   // query
   const userExistsQuery = query.userExists(); 

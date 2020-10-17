@@ -6,9 +6,9 @@ header.uk-box-shadow-medium
   #headerRight.uk-navbar-right
     .header-action.uk-navbar-nav
       li.header-right-item
-        form(action="javascript:void(0)" class="uk-search uk-search-default")
+        form(action="/search" class="uk-search uk-search-default" method="get")
           span(uk-search-icon)
-          input(class="uk-search-input search-input" type="search" placeholder="Search...")
+          input(class="uk-search-input search-input" type="search" name="keyword" placeholder="Search..." value=keyword)
       li.header-right-item
         a(href="/category") カテゴリ
       - if (user)
@@ -18,7 +18,7 @@ header.uk-box-shadow-medium
           div(uk-dropdown="mode: click; pos: bottom-justify")
             ul(class="uk-nav uk-dropdown-nav")
               li.uk-margin
-                a(href="/#{user.username}") 
+                a(href="/"+user.username) 
                   span(uk-icon="icon: user" class="uk-margin-small-right")
                   | プロフィール
               li.uk-margin
@@ -27,11 +27,11 @@ header.uk-box-shadow-medium
                   | プロフィール編集
               li.uk-nav-divider
               li.uk-margin
-                a(href="/like")
+                a(href="/"+user.username+"/like")
                   span(uk-icon="icon: heart" class="uk-margin-small-right")
                   | いいね
               li.uk-margin
-                a(href="/stock")
+                a(href="/"+user.username+"/stock")
                   span(uk-icon="icon: folder" class="uk-margin-small-right")
                   | ストック
               li.uk-nav-divider
@@ -43,4 +43,4 @@ header.uk-box-shadow-medium
         li.header-right-item
           a(href="/auth/signin") ログイン
       li.header-right-item.header-button-action
-        button(class="uk-button uk-button-primary button-code") コードを書く
+        button(class="uk-button uk-button-primary button-code" onclick="location.href='/code'") コードを書く

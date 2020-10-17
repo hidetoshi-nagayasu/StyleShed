@@ -51,12 +51,13 @@ const usersRouter    = require('./routes/users');
 const codeRouter     = require('./routes/code');
 const authRouter     = require('./routes/auth');
 const settingRouter  = require('./routes/setting'); 
+const categoryRouter = require('./routes/category');
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', indexRouter, usersRouter);
 app.use('/code', codeRouter);
 app.use('/auth', authRouter);
 app.use('/setting', settingRouter);
+app.use('/category', categoryRouter);
 
 
 /**

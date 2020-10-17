@@ -16,6 +16,10 @@ const query = {
     return `SELECT id, user_name, email, password FROM user WHERE email = ? LIMIT 1`;
   },
 
+  updateLastLoginAt: function() {
+    return `UPDATE user SET last_login_at = ? WHERE id = ?`;
+  },
+
   // 【パスワード忘れ用】メールアドレスからユーザー検索
   findUserByEmail: function() {
     return `SELECT id, user_name FROM user WHERE email = ? LIMIT 1`;
