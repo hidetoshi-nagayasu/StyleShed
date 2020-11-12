@@ -44,20 +44,33 @@ app.use("/codemirror", express.static(__dirname + "/node_modules/codemirror"));
 
 
 /**
+ * Ignore Favicon
+ */
+const ignoreFavicon = (req, res, next) => {
+  if (req.originalUrl === '/favicon.ico') {
+    res.status(204).json({nope: true});
+  } else {
+    next();
+  }
+}
+
+/**
  * Routing
  */
 const indexRouter    = require('./routes/index');
-const usersRouter    = require('./routes/users');
+const userRouter     = require('./routes/user');
 const codeRouter     = require('./routes/code');
 const authRouter     = require('./routes/auth');
 const settingRouter  = require('./routes/setting'); 
 const categoryRouter = require('./routes/category');
 
-app.use('/', indexRouter, usersRouter);
+app.use(ignoreFavicon);
+app.use('/', indexRouter);
 app.use('/code', codeRouter);
 app.use('/auth', authRouter);
 app.use('/setting', settingRouter);
 app.use('/category', categoryRouter);
+app.use('/', userRouter);
 
 
 /**

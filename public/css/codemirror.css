@@ -1,6 +1,3 @@
-/**
- * CodeMirror
- */
 :root {
   --theme: #000;
   --font: 'Source Sans Pro';
@@ -44,8 +41,9 @@
   position: relative;
 }
 
-#html {
+#html, #css, #js {
   border-right: solid 1px #777;
+  width: 33%;
 }
 
 /* The Wrapper for the editor wrappers */
@@ -56,6 +54,7 @@
   border-bottom: solid 10px #333;
   overflow: hidden;
   position: relative;
+  display: flex;
 }
 
 /* Live Preview Wrapper */

@@ -6,4 +6,20 @@ block vars
   - var page = pages[key]
 
 block content
-  p Index...
+  main.uk-container
+    section
+      .category
+        h2.category-text
+          | ログインフォーム
+      .designs
+        - for(var i = 0; i < 4; i++)
+          article.uk-margin
+            .uk-card.uk-card-default(style="width: 400px;")
+              .thumbnail.uk-card-media-top
+                img(src="/img/web_design.jpg" alt="")
+              .uk-card-body
+                h3.design-title.uk-card-title
+                  | デザインタイトル
+                .create-user
+                  span.username
+                    | test_taro

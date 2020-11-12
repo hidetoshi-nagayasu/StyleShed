@@ -2,14 +2,14 @@ extends ../layout
 
 block vars
   include ../config
-  - var key = "Code"
+  - var key = "code"
   - var page = pages[key]
 
 block content
-  h1= title
   .studio
     .control-room
       #html.editor
+      #css.editor
+      #js.editor
   .live-room
-    iframe#live(src='')
-
+    iframe(id="live" src="")

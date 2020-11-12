@@ -15,5 +15,13 @@ title #{site_title}
 //- meta(content=(key == "top" ? "website" : "article"), property="og:type")
 meta(content="ja_JP", property="og:locale")
 
-link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css')
+block style
+link(rel='stylesheet' href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css")
+
+if page.name == 'code'
+  link(rel="stylesheet", href="/codemirror/lib/codemirror.css")
+  link(rel="stylesheet", href="/codemirror/theme/panda-syntax.css")
+  link(rel="stylesheet", href="/codemirror/theme/lucario.css")
+  link(rel="stylesheet", href=css_path+"/codemirror.css")
+
 link(rel="stylesheet", href=css_path+"/style.css")

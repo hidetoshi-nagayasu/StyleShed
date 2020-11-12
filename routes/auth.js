@@ -109,7 +109,14 @@ router.post('/signin', (req, res, next) => {
         // セッション格納
         req.session.user = user;
         req.flash('login_success', message.LOGIN_SUCCESS);
-        res.redirect('/');
+
+        // セッションに遷移先URLが格納されている場合はそのURLにリダイレクト
+        if(req.session && req.session.url) {
+          console.log(req.session.url);
+          res.redirect(req.session.url);
+        } else {
+          res.redirect('/');
+        }
       } else {
         req.flash('fail', message.LOGIN_FAILED)
         res.render('auth/signin', {

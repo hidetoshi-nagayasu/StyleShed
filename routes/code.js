@@ -10,13 +10,14 @@ const message     = require('../message_const');
  * @method GET
  */
 router.get('/', (req, res, next) => {
-  if (req.session && req.session.user) {
-    res.locals.user = req.session.user;
-    res.render('code/code', { title: 'Code' });
-  } else {
-    res.redirect('/auth/signin');
-  }
-
+  res.render('code/code', { title: 'Code' });
+  // if (req.session && req.session.user) {
+  //   res.locals.user = req.session.user;
+  //   res.render('code/code', { title: 'Code' });
+  // } else {
+  //   req.session.url = req.originalUrl; 
+  //   res.redirect('/auth/signin');
+  // }
 });
 
 module.exports = router;

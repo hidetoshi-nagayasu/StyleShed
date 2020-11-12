@@ -1,7 +1,20 @@
 footer
-  p
+  p.copyright.uk-text-center
     small(class="uk-text-muted") &copy; 2020 hidetoshi.nagayasu
 script(type="text/javascript" src="/jquery/jquery.min.js")
 script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js')
 script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js')
+
+if page.name == 'code'
+  //- Codemirror
+  script(type="text/javascript" src="/codemirror/lib/codemirror.js")
+  script(type="text/javascript" src="/codemirror/mode/htmlmixed/htmlmixed.js")
+  script(type="text/javascript" src="/codemirror/mode/css/css.js")
+  script(type="text/javascript" src="/codemirror/mode/javascript/javascript.js")
+  script(type="text/javascript" src="/codemirror/mode/xml/xml.js")
+  script(type="text/javascript" src="/codemirror/mode/jsx/jsx.js")
+  script(type="text/javascript" src="/codemirror/addon/edit/closetag.js")
+  script(type="text/javascript" src="/codemirror/addon/edit/closebrackets.js")
+  script(type="text/javascript" src=js_path+"/code.js")
+
 script(type="text/javascript" src=js_path+"/script.js")

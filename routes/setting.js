@@ -14,6 +14,7 @@ router.get('/profile', function(req, res, next) {
     res.locals.user = req.session.user;
     res.render('setting/profile', {});
   } else {
+    req.session.url = req.originalUrl; 
     res.redirect('/auth/signin');
   }
 });
