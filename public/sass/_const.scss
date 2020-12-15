@@ -1,0 +1,45 @@
+
+/*******************
+ * Import
+ *******************/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+
+/*******************
+ * COLORS
+ *******************/
+$color_dark_grey:         #31373D;
+$color_grey:              #4B535B;
+$color_grey_sub:          #7B7D80;
+$color_light_grey:        #ACACAC;
+$color_matt_yellow:       #AEA31D;
+$color_matt_yellow_hover: #b1aa55;
+$color_matt_red:          #B15E5E;
+$color_matt_blue:         #619ECC;
+$color_white:             #FFFFFF;
+
+$color_input_bg:          #4b4f54;
+
+/*******************
+ * BASE
+ *******************/
+$base_font: 'Nunito', sans-serif;
+
+
+/*******************
+ * ELEMENTS
+ *******************/
+ $input_opacity_20: 20%;
+
+
+/*******************
+ * METHODS
+ *******************/
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

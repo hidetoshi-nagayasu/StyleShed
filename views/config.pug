@@ -8,21 +8,49 @@
 - 
   var pages = {
     top: {
-      url         : 'index.html',
+      url         : '/',
       name        : 'トップページ',
       title       : 'トップページ',
       description : 'トップページです',
       keywords    : 'トップページ',
     },
     signin: {
-      url         : 'signin.html',
+      url         : '/auth/signin',
       name        : 'ログイン',
-      title       : 'ログイン',
+      title       : 'Sign in',
       description : 'ログインページです',
       keywords    : 'ログイン',
     },
+    signup: {
+      url         : '/auth/signup',
+      name        : 'アカウント作成',
+      title       : 'Sign up',
+      description : 'アカウント作成ページです',
+      keywords    : 'アカウント作成',
+    },
+    password_reset: {
+      url         : '/auth/password_reset',
+      name        : 'パスワードリセット',
+      title       : 'Password reset',
+      description : 'パスワードを忘れた場合のページです',
+      keywords    : 'パスワード忘れ',
+    },
+    password_reset_complete: {
+      url         : '/auth/password_reset_complete',
+      name        : 'パスワードリセット',
+      title       : 'Password reset',
+      description : 'パスワードリセットメール送信完了ページです',
+      keywords    : 'パスワード忘れ',
+    },
+    password_reset_new: {
+      url         : '/auth/password_reset_new',
+      name        : '新パスワード設定',
+      title       : 'New password',
+      description : '新パスワード設定ページです',
+      keywords    : '新パスワード設定',
+    },
     code: {
-      url         : '',
+      url         : '/code',
       name        : 'code',
       title       : 'code',
       description : 'code',

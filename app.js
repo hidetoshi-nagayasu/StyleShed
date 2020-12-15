@@ -5,6 +5,7 @@ const cookieParser  = require('cookie-parser');
 const logger        = require('morgan');
 const session       = require('express-session');
 const flash         = require('express-flash');
+const i18n          = require("i18n");
 
 const app = express();
 
@@ -41,6 +42,31 @@ app.use(flash());
  */
 app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist"));
 app.use("/codemirror", express.static(__dirname + "/node_modules/codemirror"));
+
+
+/**
+ * i18n
+ */
+// 多言語化の利用設定
+i18n.configure({
+  // 利用するlocalesを設定。これが辞書ファイルとひも付きます
+  locales: ['ja', 'en'],
+  defaultLocale: 'en',
+  // 辞書ファイルのありかを指定
+  directory: __dirname + "/locales",
+  // オブジェクトを利用したい場合はtrue
+  objectNotation: true
+});
+ 
+app.use(i18n.init);
+ 
+// manualでi18nセッション管理できるように設定しておきます
+app.use(function (req, res, next) {
+  if (req.session.locale) {
+    i18n.setLocale(req, req.session.locale);
+  }
+  next();
+});
 
 
 /**

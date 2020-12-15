@@ -1,61 +1,92 @@
+@charset "utf-8";
+
+@import "const";
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: $color_dark_grey;
+}
+
+.auth-section {
+  @include center;
+  display: none;
+}
+
+.auth-header {
+
+  margin-bottom: 36px;
+
+  h1.site-logo {
+    color: $color_light_grey;
+    margin: 0;
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+
+  p.page-title {
+    color: $color_grey_sub;
+    margin: 0;
+    font-weight: 200;
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+}
+
+.auth-body {
+  .form-label {
+    color: $color_light_grey;
+  }
+
+  input {
+    background: $color_input_bg;
+    border: none;
+    color: $color_light_grey;
+    padding: 0 20px;
+    font-size: 16px;
+  }
+
+  input:focus {
+    background-color: $color_input_bg;
+    color: $color_light_grey;
+  }
+
+  .submit {
+    margin-top: 36px;
+  }
+
+  button[type=submit] {
+    background: $color_matt_yellow;
+    color: $color_white;
+    margin: 0 auto;
+    text-transform: none;
+    font-size: 16px;
+    transition: 0.2s;
+  }
+
+  button[type=submit]:hover {
+    opacity: 0.8;
+  }
+}
+
+.auth-footer {
+  hr {
+    border-color: $color_grey;
+  }
+}
 
 a {
   text-decoration: none;
+  color: $color_matt_blue;
 }
 
-main {
-  display: flex;
-}
-
-.left-wrapper {
-  height: 100vh;
-  width: 60%;
-  background: #6d9fde;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .image-section {
-    height: auto;
-    position: relative;
-    padding: 0 48px;
-  }
-
-  h1.main-message {
-    font-size: 3.0vw;
-    letter-spacing: 6px;
-    color: #fff;
-  }
-
-  img {
-    object-fit: cover;
-    width: 880px;
-    height: auto;
-  }
-}
-
-.right-wrapper {
-  width: 40%;
-  position: relative;
-
-  .auth-section {
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 64px 28px;
-    background: rgba(255,255,255, 0.6);
-    border-radius: 16px;
-  }
-
-  .error-section {
-    border: solid 1px #e2515e;
-    border-radius: 12px;
-    background-color: #f3d0db;
-    padding: 12px;
-    margin-bottom: 24px;
-  }
+a:hover {
+  color: $color_matt_blue;
 }
 
 form {
@@ -64,5 +95,12 @@ form {
   button[type=submit] {
     border-radius: 24px;
   }
+}
 
+.auth-text-light-grey {
+  color: $color_light_grey;
+}
+
+.auth-text-grey {
+  color: $color_grey_sub;
 }
