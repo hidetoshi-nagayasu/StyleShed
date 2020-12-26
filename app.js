@@ -89,6 +89,7 @@ const codeRouter     = require('./routes/code');
 const authRouter     = require('./routes/auth');
 const settingRouter  = require('./routes/setting'); 
 const categoryRouter = require('./routes/category');
+const contentsRouter = require('./routes/contents');
 
 app.use(ignoreFavicon);
 app.use('/', indexRouter);
@@ -97,6 +98,7 @@ app.use('/auth', authRouter);
 app.use('/setting', settingRouter);
 app.use('/category', categoryRouter);
 app.use('/', userRouter);
+app.use('/contents', contentsRouter);
 
 
 /**

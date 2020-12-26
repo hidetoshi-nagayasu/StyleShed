@@ -6,20 +6,23 @@ block vars
   - var page = pages[key]
 
 block content
-  main.uk-container
-    section
-      .category
-        h2.category-text
-          | ログインフォーム
-      .designs
-        - for(var i = 0; i < 4; i++)
-          article.uk-margin
-            .uk-card.uk-card-default(style="width: 400px;")
-              .thumbnail.uk-card-media-top
-                img(src="/img/web_design.jpg" alt="")
-              .uk-card-body
-                h3.design-title.uk-card-title
-                  | デザインタイトル
-                .create-user
-                  span.username
-                    | test_taro
+  aside
+    .sidebar-logo
+      a(href="/") #{site_title}
+    #sidebar_nav.sidebar-nav
+      ul.sidebar-ul
+        li.sidebar-li
+          a(href="/") Home
+        li.sidebar-li
+          a(href="/contents/accordion") Accordion
+        li.sidebar-li
+          a(href="/contents/alert") Alert
+
+  main
+    include include/_header
+    section.contents
+      .contents-header
+        - if (header_item)
+          h1.page-title #{header_item.page_title}
+          p.page-description !{header_item.page_description}
+    include include/_footer

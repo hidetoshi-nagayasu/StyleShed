@@ -1,12 +1,106 @@
-header {
-  height: 80px;
-  background: #fff;
-  padding: 0 64px;
+/*******************
+ * Import
+ *******************/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*******************
+ * COLORS
+ *******************/
+/*******************
+ * BASE
+ *******************/
+/*******************
+ * ELEMENTS
+ *******************/
+/*******************
+ * METHODS
+ *******************/
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: none;
+}
+
+.l_contents {
   display: flex;
 }
 
-header .header-logo a:hover {
+aside {
+  width: 280px;
+  height: 100vh;
+  background: #4B535B;
+}
+
+aside .sidebar-logo {
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+
+aside .sidebar-logo a {
+  font-size: 36px;
+  color: #ACACAC;
+  text-align: center;
+  font-weight: 200;
   text-decoration: none;
+  transition: 0.2s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+aside .sidebar-logo a:hover {
+  opacity: 0.8;
+}
+
+aside .sidebar-nav {
+  width: 100%;
+  height: auto;
+  margin-top: 48px;
+}
+
+aside .sidebar-nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+aside .sidebar-nav ul li {
+  list-style: none;
+  height: 40px;
+  padding: 0 16px 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+aside .sidebar-nav ul li a {
+  color: #ACACAC;
+  display: block;
+  width: 100%;
+  font-weight: 200;
+}
+
+aside .sidebar-nav ul li.active {
+  background: #B15E5E;
+}
+
+aside .sidebar-nav ul li.active a.active {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+main {
+  width: calc( 100vw - 200px);
+  height: 100vh;
+  background: #31373D;
+}
+
+header {
+  height: 80px;
+  background: #31373D;
+  padding: 0 48px;
+  display: flex;
 }
 
 header .header-right-item {
@@ -22,21 +116,101 @@ header .header-button-action {
 
 header button.button-code {
   border-radius: 24px;
+  background: #AEA31D;
+  color: #FFFFFF;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+header button.button-code:hover {
+  opacity: 0.9;
+}
+
+header button.button-code .code-icon {
+  margin-right: 4px;
+}
+
+header .header-search-form {
+  width: 240px;
+}
+
+header .search-icon {
+  color: #7B7D80 !important;
 }
 
 header .search-input {
+  background: #4a4e53 !important;
+  border: 1px solid #4B535B !important;
   border-radius: 24px;
+  color: #ACACAC;
 }
 
-h1 {
+header .search-input::-moz-placeholder {
+  color: #7B7D80;
+}
+
+header .search-input:-ms-input-placeholder {
+  color: #7B7D80;
+}
+
+header .search-input::placeholder {
+  color: #7B7D80;
+}
+
+header .search-input::-ms-input-placeholder {
+  color: #7B7D80;
+}
+
+header .user-icon {
+  color: #ACACAC;
+}
+
+header .user-dropdown {
+  background: #4B535B;
+  border-radius: 8px;
+}
+
+header .user-dropdown .uk-nav-divider {
+  border-top: 1px solid #6C7783;
+}
+
+header .user-dropdown a.link-normal:hover {
+  color: #ACACAC;
+  opacity: 0.7;
+}
+
+header .user-dropdown a.link-signout {
+  color: #EA5C5C;
+}
+
+header .user-dropdown a.link-signout:hover {
+  color: #EA5C5C;
+  opacity: 0.7;
+}
+
+section.contents {
+  width: 100%;
+  height: calc( 100vh - 140px);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+section.contents h1.page-title {
+  font-family: "Inter", sans-serif;
+  color: #ACACAC;
+  font-weight: 400;
   margin: 0;
 }
 
+section.contents p.page-description {
+  color: #79797A;
+}
+
 footer {
-  border-top: 1px solid #d7d7d7;
-  margin-top: 64px;
+  height: 60px;
 }
 
 footer .copyright {
-  margin-top: 24px;
+  margin: 0;
 }
