@@ -79,6 +79,10 @@ router.post('/signin', (req, res, next) => {
   const getUserQuery = query.LoginUser(email);
 
   connection.query(getUserQuery, [email], (err, rows) => {
+    if (err) {
+	console.log(err);
+	throw err;
+    }
     const record = rows[0];
     const userId = rows.length ? record.id : false;
     if (userId) {
