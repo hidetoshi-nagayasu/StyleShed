@@ -1,6 +1,3 @@
-window.load = (function() {
-  $('body').fadeIn(0);
-}());
 
 const PATH = location.pathname;
 const SIDEBAR_ACTIVE = 'active';

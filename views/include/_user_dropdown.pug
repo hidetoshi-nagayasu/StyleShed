@@ -1,0 +1,26 @@
+a(href="#" class="user-icon link-text")
+  span(uk-icon="icon: user; ratio: 1.25")
+div(uk-dropdown="mode: click; pos: bottom-justify" class="user-dropdown")
+  ul(class="uk-nav uk-dropdown-nav")
+    li.uk-margin
+      a(href="/"+user.username class="link-normal") 
+        span(uk-icon="icon: user" class="uk-margin-small-right")
+        | プロフィール
+    li.uk-margin
+      a(href="/setting/profile" class="link-normal") 
+        span(uk-icon="icon: file-edit" class="uk-margin-small-right")
+        | プロフィール編集
+    li.uk-nav-divider
+    li.uk-margin
+      a(href="/"+user.username+"/like" class="link-normal")
+        span(uk-icon="icon: heart" class="uk-margin-small-right")
+        | いいね
+    li.uk-margin
+      a(href="/"+user.username+"/stock" class="link-normal")
+        span(uk-icon="icon: folder" class="uk-margin-small-right")
+        | ストック
+    li.uk-nav-divider
+    li.uk-margin-top
+      a(href="/auth/signout" class="link-signout") 
+        span(uk-icon="icon: sign-out" class="uk-margin-small-right")
+        | ログアウト

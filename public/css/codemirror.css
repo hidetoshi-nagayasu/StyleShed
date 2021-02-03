@@ -1,3 +1,33 @@
+/*******************
+ * Import
+ *******************/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*******************
+ * COLORS
+ *******************/
+/*******************
+ * BASE
+ *******************/
+/*******************
+ * ELEMENTS
+ *******************/
+.uk-button {
+  text-transform: none;
+}
+
+a.link-text {
+  color: #ACACAC !important;
+  text-decoration: none !important;
+  transition: 0.2s !important;
+}
+
+a.link-text:hover {
+  opacity: 0.8 !important;
+}
+
+/*******************
+ * METHODS
+ *******************/
 :root {
   --theme: #000;
   --font: 'Source Sans Pro';
@@ -42,16 +72,35 @@
 }
 
 #html, #css, #js {
-  border-right: solid 1px #777;
   width: 33%;
+}
+
+.editor-title {
+  background: #303335;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.col-resizer {
+  width: 8px;
+  height: 100%;
+  background: #4B535B;
+  cursor: col-resize;
+}
+
+.row-resizer {
+  width: 100%;
+  height: 10px;
+  background: #4B535B;
+  cursor: row-resize;
 }
 
 /* The Wrapper for the editor wrappers */
 .control-room {
   height: calc(50vh - 63px);
   background: #eee;
-  border-top: solid 1px #000;
-  border-bottom: solid 10px #333;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -61,7 +110,6 @@
 .live-room {
   height: calc(50vh - 63px);
   background: #fff;
-  border-top: solid 10px #333;
   position: relative;
 }
 

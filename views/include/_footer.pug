@@ -1,9 +1,16 @@
-footer
-  p.copyright.uk-text-center
-    small(class="uk-text-muted") &copy; 2020 hidetoshi.nagayasu
+if page.name != 'code'
+  footer
+    p.copyright.uk-text-center
+      small(class="uk-text-muted") &copy; 2020 hidetoshi.nagayasu
 script(type="text/javascript" src="/jquery/jquery.min.js")
+script(type="text/javascript" src="/jquery-ui-dist/jquery-ui.min.js")
 script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js')
 script(type="text/javascript" src='https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js')
+
+script.
+  window.load = (function() {
+    $('body').fadeIn(0);
+  }());
 
 if page.name == 'code'
   //- Codemirror

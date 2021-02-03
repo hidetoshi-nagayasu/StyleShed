@@ -1,0 +1,131 @@
+@charset "utf-8";
+@import "const";
+
+
+* {
+  font-family: $base_font;
+}
+
+body {
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: $code_header_height;
+  box-sizing: border-box;
+  background: $color_dark_grey;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+
+  // header left
+  .header-left {
+    width: 280px;
+    position: relative;
+
+    .header-logo {
+      width: 100%;
+      height: $code_header_height;
+      position: relative;
+  
+      a {
+        font-size: 36px;
+        color: $color_light_grey;
+        text-align: center;
+        font-weight: 200;
+        text-decoration: none;
+        transition: 0.2s;
+        @include center;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+
+  // header center
+  .header-center {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @include center;
+
+    h1 {
+      color: $color_light_grey;
+      font-size: 24px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-right: 4px;
+      }
+
+      .edit-icon {
+        padding: 4px;
+        width: 32px;
+        height: 32px;
+        transition: 0.2s;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .edit-icon:hover {
+          background: $color_grey;
+      }
+
+      input.edit-title-input {
+        font-size: 18px;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid $color_grey;
+        color: $color_light_grey;
+        padding: 8px;
+        text-align: center;
+      }
+
+      input.edit-title-input:focus {
+        outline: none;
+      }
+    }
+  }
+
+
+  // header right
+  .header-right {
+    padding-right: 48px;
+
+    button.button-code {
+      @include button_yellow;
+      display: flex;
+      align-items: center;
+
+      span.save-icon {
+        margin-right: 8px;
+      }
+    }
+
+    button.button-code:hover {
+      @include button_yellow_hover;
+    }
+
+    .header-action {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .header-right-item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: 0 16px;
+      }
+    }
+  }
+}

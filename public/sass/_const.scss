@@ -31,8 +31,26 @@ $base_font: 'Inter', sans-serif;
 /*******************
  * ELEMENTS
  *******************/
- $input_opacity_20: 20%;
+$input_opacity_20: 20%;
+$radius24: 24px;
+$radius8: 8px;
+$header_height: 80px;
+$code_header_height: 60px;
+$footer_height: 40px;
 
+.uk-button {
+  text-transform: none;
+}
+
+a.link-text {
+  color: $color_light_grey !important;
+  text-decoration: none !important;
+  transition: 0.2s !important;
+}
+
+a.link-text:hover {
+  opacity: 0.8 !important;
+}
 
 /*******************
  * METHODS

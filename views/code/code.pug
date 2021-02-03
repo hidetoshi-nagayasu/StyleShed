@@ -6,10 +6,27 @@ block vars
   - var page = pages[key]
 
 block content
+  include _header
   .studio
     .control-room
-      #html.editor
-      #css.editor
-      #js.editor
+      #html.editor-panel.js-col-resizer
+        .editor-title
+          span HTML
+        #htmlEditor.editor
+      .col-resizer
+      #css.editor-panel.js-col-resizer
+        .editor-title
+          span CSS
+        #cssEditor.editor
+      .col-resizer
+      #js.editor-panel
+        .editor-title
+          span JS
+        #jsEditor.editor
+    .row-resizer.js-row-resizer
   .live-room
     iframe(id="live" src="")
+  #notifyIcon(style="display: none;")
+    span.check_circle_icon
+      include ../../public/img/check_circle_light_grey.svg
+  include ../include/_footer

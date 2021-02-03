@@ -1,0 +1,22 @@
+header
+  .header-left
+    .header-logo
+      a(href="/") #{site_title}
+  .header-center
+    h1#codeTitle
+      #codeTitleWrapper
+        a#codeTitleText.link-text(href="#") #{code_title}
+        span#editTitleIcon.edit-icon
+          include ../../public/img/pencil_grey.svg
+  .header-right
+    .header-action
+      li.header-right-item
+        button(id="saveButton" class="uk-button button-code") 
+          span.save-icon
+            include ../../public/img/cloud_done.svg
+          | Save
+      li.header-right-item
+        - if (user)
+          include ../include/_user_dropdown
+        - else
+          a.link-text(href="/auth/signin") ログイン

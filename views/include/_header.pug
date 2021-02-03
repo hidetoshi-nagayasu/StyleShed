@@ -1,42 +1,17 @@
 header
-  #headerRight.uk-navbar-right
+  .header-right.uk-navbar-right
     .header-action.uk-navbar-nav
       li.header-right-item
         form(action="/search" class="uk-search uk-search-default header-search-form" method="get")
           span.search-icon(uk-search-icon)
           input(class="uk-search-input search-input" type="search" name="keyword" placeholder="Search..." value=keyword)
       li.header-right-item.header-button-action
-        button(class="uk-button button-code" onclick="location.href='/code'") 
-          span(uk-icon="icon: pencil" class="code-icon")
+        button(class="uk-button button-code" onclick="location.href='/code'")
+          span.code-icon
+            include ../../public/img/pencil_light_grey.svg
           | コードを書く
-      - if (user)
-        li.header-right-item
-          a(href="#" class="user-icon")
-            span(uk-icon="icon: user; ratio: 1.25")
-          div(uk-dropdown="mode: click; pos: bottom-justify" class="user-dropdown")
-            ul(class="uk-nav uk-dropdown-nav")
-              li.uk-margin
-                a(href="/"+user.username class="link-normal") 
-                  span(uk-icon="icon: user" class="uk-margin-small-right")
-                  | プロフィール
-              li.uk-margin
-                a(href="/setting/profile" class="link-normal") 
-                  span(uk-icon="icon: file-edit" class="uk-margin-small-right")
-                  | プロフィール編集
-              li.uk-nav-divider
-              li.uk-margin
-                a(href="/"+user.username+"/like" class="link-normal")
-                  span(uk-icon="icon: heart" class="uk-margin-small-right")
-                  | いいね
-              li.uk-margin
-                a(href="/"+user.username+"/stock" class="link-normal")
-                  span(uk-icon="icon: folder" class="uk-margin-small-right")
-                  | ストック
-              li.uk-nav-divider
-              li.uk-margin-top
-                a(href="/auth/signout" class="link-signout") 
-                  span(uk-icon="icon: sign-out" class="uk-margin-small-right")
-                  | ログアウト
-      - else
-        li.header-right-item
-          a(href="/auth/signin") ログイン
+      li.header-right-item
+        - if (user)
+          include _user_dropdown
+        - else
+          a.link-text(href="/auth/signin") ログイン

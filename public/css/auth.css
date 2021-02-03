@@ -11,6 +11,20 @@
 /*******************
  * ELEMENTS
  *******************/
+.uk-button {
+  text-transform: none;
+}
+
+a.link-text {
+  color: #ACACAC !important;
+  text-decoration: none !important;
+  transition: 0.2s !important;
+}
+
+a.link-text:hover {
+  opacity: 0.8 !important;
+}
+
 /*******************
  * METHODS
  *******************/

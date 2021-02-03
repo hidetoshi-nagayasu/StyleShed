@@ -1,0 +1,29 @@
+@charset "utf-8";
+@import "const";
+
+.user-icon {
+  color: $color_light_grey;
+}
+
+.user-dropdown {
+  background: $color_grey;
+  border-radius: $radius8;
+
+  .uk-nav-divider {
+    border-top: 1px solid #6C7783;
+  }
+
+  a.link-normal:hover {
+    color: $color_light_grey;
+    opacity: 0.7;
+  }
+
+  a.link-signout {
+    color: #EA5C5C;
+  }
+
+  a.link-signout:hover {
+    color: #EA5C5C;
+    opacity: 0.7;
+  }
+}

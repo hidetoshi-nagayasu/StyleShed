@@ -1,0 +1,48 @@
+/*******************
+ * Import
+ *******************/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*******************
+ * COLORS
+ *******************/
+/*******************
+ * BASE
+ *******************/
+/*******************
+ * ELEMENTS
+ *******************/
+.uk-button {
+  text-transform: none;
+}
+
+a.link-text {
+  color: #ACACAC !important;
+  text-decoration: none !important;
+  transition: 0.2s !important;
+}
+
+a.link-text:hover {
+  opacity: 0.8 !important;
+}
+
+/*******************
+ * METHODS
+ *******************/
+.uk-notification-message {
+  background: #7B7D80;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 0.9em;
+}
+
+.uk-notification-message .check_circle_icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.uk-notification-message a.uk-notification-close {
+  color: #FFFFFF;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+}

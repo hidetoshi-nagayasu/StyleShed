@@ -41,6 +41,7 @@ app.use(flash());
  * Assets directory
  */
 app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist"));
+app.use("/jquery-ui-dist", express.static(__dirname + "/node_modules/jquery-ui-dist"));
 app.use("/codemirror", express.static(__dirname + "/node_modules/codemirror"));
 
 

@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import "const";
+
+.uk-notification-message {
+  // background: #5f871e;
+  background: $color_grey_sub;
+  border-radius: $radius8;
+  color: $color_white;
+  font-size: 0.9em;
+
+  .check_circle_icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  a.uk-notification-close {
+    color: $color_white;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

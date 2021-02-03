@@ -11,6 +11,20 @@
 /*******************
  * ELEMENTS
  *******************/
+.uk-button {
+  text-transform: none;
+}
+
+a.link-text {
+  color: #ACACAC !important;
+  text-decoration: none !important;
+  transition: 0.2s !important;
+}
+
+a.link-text:hover {
+  opacity: 0.8 !important;
+}
+
 /*******************
  * METHODS
  *******************/
@@ -91,7 +105,7 @@ aside .sidebar-nav ul li.active a.active {
 }
 
 main {
-  width: calc( 100vw - 200px);
+  width: calc( 100vw - 280px);
   height: 100vh;
   background: #31373D;
 }
@@ -101,6 +115,10 @@ header {
   background: #31373D;
   padding: 0 48px;
   display: flex;
+}
+
+header .header-action {
+  height: 80px;
 }
 
 header .header-right-item {
@@ -191,7 +209,7 @@ header .user-dropdown a.link-signout:hover {
 
 section.contents {
   width: 100%;
-  height: calc( 100vh - 140px);
+  height: calc( 100vh - 120px);
   padding: 40px;
   box-sizing: border-box;
 }
@@ -208,7 +226,7 @@ section.contents p.page-description {
 }
 
 footer {
-  height: 60px;
+  height: 40px;
 }
 
 footer .copyright {
