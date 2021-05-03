@@ -11,13 +11,11 @@ block content
       a(href="/") #{site_title}
     #sidebar_nav.sidebar-nav
       ul.sidebar-ul
-        li.sidebar-li
+        li.slidebar-li 
           a(href="/") Home
-        li.sidebar-li
-          a(href="/contents/accordion") Accordion
-        li.sidebar-li
-          a(href="/contents/alert") Alert
-
+        each val, key in category
+          li.slidebar-li
+            a(href="/contents/"+key) #{val.name}
   main
     include include/_header
     section.contents

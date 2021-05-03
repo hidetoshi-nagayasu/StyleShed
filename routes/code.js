@@ -14,7 +14,6 @@ router.get('/', (req, res, next) => {
   // res.render('code/code', { title: 'Code' });
   if (req.session && req.session.user) {
     res.locals.user = req.session.user;
-    console.log(req.session.user);
     res.render('code/code', { code_title: 'Untitled' });
   } else {
     req.session.url = req.originalUrl; 

@@ -98,8 +98,8 @@ app.use('/code', codeRouter);
 app.use('/auth', authRouter);
 app.use('/setting', settingRouter);
 app.use('/category', categoryRouter);
-app.use('/', userRouter);
 app.use('/contents', contentsRouter);
+app.use('/user', userRouter);
 
 
 /**

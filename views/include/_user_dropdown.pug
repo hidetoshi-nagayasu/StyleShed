@@ -3,7 +3,7 @@ a(href="#" class="user-icon link-text")
 div(uk-dropdown="mode: click; pos: bottom-justify" class="user-dropdown")
   ul(class="uk-nav uk-dropdown-nav")
     li.uk-margin
-      a(href="/"+user.username class="link-normal") 
+      a(href="/user/"+user.username class="link-normal") 
         span(uk-icon="icon: user" class="uk-margin-small-right")
         | プロフィール
     li.uk-margin
@@ -12,11 +12,11 @@ div(uk-dropdown="mode: click; pos: bottom-justify" class="user-dropdown")
         | プロフィール編集
     li.uk-nav-divider
     li.uk-margin
-      a(href="/"+user.username+"/like" class="link-normal")
+      a(href="/user/"+user.username+"/like" class="link-normal")
         span(uk-icon="icon: heart" class="uk-margin-small-right")
         | いいね
     li.uk-margin
-      a(href="/"+user.username+"/stock" class="link-normal")
+      a(href="/user/"+user.username+"/stock" class="link-normal")
         span(uk-icon="icon: folder" class="uk-margin-small-right")
         | ストック
     li.uk-nav-divider

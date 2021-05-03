@@ -13,7 +13,11 @@ const message = {
   PASSWORD_UPDATE_SUCCESS: 'パスワードの更新が完了しました。',
 
   // Error
-  ERROR_NOT_COMPLETED: '処理が正常に完了しませんでした。もう一度お試しください。'
+  ERROR_NOT_COMPLETED: '処理が正常に完了しませんでした。もう一度お試しください。',
+
+  // Contents
+  NO_CONTENTS_TITLE: 'Oops...',
+  NO_CONTENTS_DESC: 'Sorry, no contents at this URL.',
 };
 
 module.exports = message;

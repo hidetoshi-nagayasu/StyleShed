@@ -10,8 +10,9 @@ router.get('/:username', (req, res, next) => {
     res.locals.user = req.session.user;
   }
 
+  console.log('bbb');
+
   const username = req.params.username;
-  console.log(username);
   res.render('profile', {
     username: username
   });

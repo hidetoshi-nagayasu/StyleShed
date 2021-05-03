@@ -44,12 +44,16 @@ aside {
   width: 280px;
   height: 100vh;
   background: #4B535B;
+  overflow-y: auto;
 }
 
 aside .sidebar-logo {
   width: 100%;
   height: 80px;
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #4B535B;
 }
 
 aside .sidebar-logo a {
@@ -78,6 +82,7 @@ aside .sidebar-nav {
 aside .sidebar-nav ul {
   padding: 0;
   margin: 0;
+  padding-bottom: 48px;
 }
 
 aside .sidebar-nav ul li {
