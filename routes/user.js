@@ -10,10 +10,8 @@ router.get('/:username', (req, res, next) => {
     res.locals.user = req.session.user;
   }
 
-  console.log('bbb');
-
   const username = req.params.username;
-  res.render('profile', {
+  res.render('user/profile', {
     username: username
   });
 });
@@ -29,7 +27,7 @@ router.get('/:username/like', (req, res, next) => {
   }
 
   const username = req.params.username;
-  res.render('profile', {
+  res.render('user/profile', {
     username: username
   });
 });
@@ -45,7 +43,7 @@ router.get('/:username/stock', (req, res, next) => {
   }
 
   const username = req.params.username;
-  res.render('profile', {
+  res.render('user/profile', {
     username: username
   });
 });

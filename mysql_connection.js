@@ -10,7 +10,8 @@ const db_config = {
   host:     env.DB_HOST,
   user:     env.DB_USER,
   password: env.DB_PASSWORD,
-  database: env.DB_DBNAME
+  database: env.DB_DBNAME,
+  acquireTimeout: 60000 // 60秒
 };
 
 function handleDisconnect() {

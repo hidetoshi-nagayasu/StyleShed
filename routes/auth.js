@@ -116,7 +116,7 @@ router.post('/signin', (req, res, next) => {
 
         // セッションに遷移先URLが格納されている場合はそのURLにリダイレクト
         if(req.session && req.session.url) {
-          console.log(req.session.url);
+          console.log('Redirect to: ' + req.session.url);
           res.redirect(req.session.url);
         } else {
           res.redirect('/');

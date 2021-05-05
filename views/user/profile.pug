@@ -1,0 +1,16 @@
+extends ../layout
+
+block vars
+  include ../config
+  - var key = "top"
+  - var page = pages[key]
+
+block content
+  main
+    include ../include/_header
+    section.contents
+      .contents-header
+        - if (header_item)
+          h1.page-title #{header_item.page_title}
+          p.page-description !{header_item.page_description}
+    include ../include/_footer
